@@ -1,0 +1,30 @@
+{
+  "name": "customer-relationship-management",
+  "version": "1.0.0",
+  "description": "Customer Relationship Manager web application is widely used by managers to store, retrieve and modify their customers' information. This project is the implementation of a backend web application where we can create, read, update and delete (CRUD) customer information.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bi5hnoi/Customer-Relationship-Management.git"
+  },
+  "author": "Rahul Bishnoi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bi5hnoi/Customer-Relationship-Management/issues"
+  },
+  "homepage": "https://github.com/bi5hnoi/Customer-Relationship-Management#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.2",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "mongoose": "^6.6.0",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.19"
+  }
+}
