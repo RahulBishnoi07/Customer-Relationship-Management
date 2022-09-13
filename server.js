@@ -15,6 +15,10 @@ app.get('/',(req,res)=>{
     res.render('home');
 });
 
+app.get('/add_user',(req,res)=>{
+    res.render('add_user');
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT,()=>{ console.log(`Server is listening of Port ${PORT}`); });
