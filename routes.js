@@ -11,8 +11,16 @@ router.get('/get_user', async (req,res)=>{
     }
 });
 
+router.get('/get_user/:id', async (req,res)=>{
+    try{
+        const obj = await model.findById(req.params.id);
+        res.json(obj);
+    }catch(err){
+        res.send('Error' + err);
+    }
+});
+
 router.post('/add_user', async (req,res)=>{
-    console.log(req.body);
     const obj=new model({
         name: req.body.name,
         gmail: req.body.gmail,

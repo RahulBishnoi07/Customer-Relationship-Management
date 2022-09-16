@@ -19,8 +19,6 @@ con.on('open',()=>{
 
 app.use(morgan('tiny'));
 
-app.use(express.json());
-
 app.set("view engine","ejs");
 
 const PORT=process.env.PORT;
