@@ -104,7 +104,7 @@ table{
 }
 
 .table tr:hover{
-    background-color: #06d601;
+    background-color: #06d6a0;
 }
 
 .table tr:hover td > a{
