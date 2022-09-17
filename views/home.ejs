@@ -50,10 +50,10 @@
                             <td><%=users[i].gender%></td>
                             <td><%=users[i].status%></td>
                             <td>
-                                <a href="/updateUser" class="btn border-shadow update">
+                                <!--<a href="/updateUser" class="btn border-shadow update">
                                     <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
-                                </a>
-                                <a class="btn border-shadow delete" data-id=<%=users[i]._id%>>
+                                </a>-->
+                                <a href="/api/delete/user/<%=users[i]._id%>" class="btn border-shadow delete">
                                     <span class="text-gradient"><i class="fas fa-times"></i></span>
                                 </a>
                             </td>

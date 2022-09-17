@@ -26,4 +26,9 @@ router.post('/add/user', async (req,res)=>{
     }
 });
 
+router.get('/delete/user/:id', async (req,res)=>{
+    const obj = await model.findByIdAndDelete(req.params.id);
+    res.redirect('/');
+});
+
 module.exports = router;
