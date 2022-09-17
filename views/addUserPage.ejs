@@ -33,15 +33,15 @@
                 <h2 class="text-dark">New User</h2>
                 <span class="text-light">Use the below form to create a new account</span>
             </div>
-            <form method="POST" id="add_user">
+            <form action="/api/add/user" method="POST" id="add_user">
                 <div class="new_user">
                     <div class="form-group">
                         <label for="name" class="text-light">Name</label>
                         <input type="hidden" name="id" value="">
-                        <input type="text" name="name" value="" placeholder="Rahul Bishnoi">
+                        <input type="text" name="name" value="" placeholder="Name">
                     </div>
                     <div class="form-group">
-                        <label for="Email" class="text-light">Email</label>
+                        <label for="email" class="text-light">Email</label>
                         <input type="text" name="email" value="" placeholder="example@gmail.com">
                     </div>
                     <div class="form-group">
@@ -56,13 +56,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="gender" class="text-light">Status</label>
+                        <label for="status" class="text-light">Status</label>
                         <div class="radio inline">
                             <input type="radio" id="radio-4" name="status" value="Active">
                             <label for="radio-4" class="radio-label">Active</label>
                         </div>
                         <div class="radio inline">
-                            <input type="radio" name="radio-5" value="Inactive">
+                            <input type="radio" id="radio-5" name="status" value="Inactive">
                             <label for="radio-5" class="radio-label">Inactive</label>
                         </div>
                     </div>

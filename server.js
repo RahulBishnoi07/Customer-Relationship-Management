@@ -1,9 +1,10 @@
-const express=require('express');
-const dotenv=require('dotenv');
-const morgan=require('morgan');
+const express = require('express');
+const dotenv = require('dotenv');
+const morgan = require('morgan');
 const path = require('path');
 const mongoose = require('mongoose');
-const bodyParser=require('body-parser');
+const bodyParser = require('body-parser');
+const axios = require('axios');
 
 dotenv.config({path:'config.env'});
 
@@ -19,25 +20,32 @@ con.on('open',()=>{
 
 app.use(morgan('tiny'));
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.set("view engine","ejs");
 
 const PORT=process.env.PORT;
 
 app.get('/',(req,res)=>{
-    res.render('home');
+    axios.get('http://localhost:8808/api/get/user')
+        .then(function(response){
+            res.render('home',{users:response.data});
+        })
 });
 
-app.get('/add_user',(req,res)=>{
-    res.render('add_user');
+app.get('/addUserPage',(req,res)=>{
+    res.render('addUserPage');
 });
 
-app.get('/update_user',(req,res)=>{
-    res.render('update_user');
+app.get('/updateUser',(req,res)=>{
+    res.render('updateUser');
 });
 
 app.use(express.json());
 
 const routes=require('./routes');
+const { response } = require('express');
 
 app.use('/api',routes);
 

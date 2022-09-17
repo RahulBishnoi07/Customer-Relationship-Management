@@ -25,7 +25,7 @@
     <main id="site-main">
         <div class="container">
             <div class="box-nav d-flex justify-between">
-                <a href="/add_user" class="border-shadow">
+                <a href="/addUserPage" class="border-shadow">
                     <span class="text-gradient">New User<i class="fa-sharp fa-solid fa-user"></i></span>
                 </a>
             </div>
@@ -42,21 +42,23 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <%for(var i=0;i<users.length;i++){%>
                         <tr>
-                            <td>1</td>
-                            <td>Username</td>
-                            <td>example@gmail.com</td>
-                            <td>Male</td>
-                            <td>Active</td>
+                            <td><%=i+1%></td>
+                            <td><%=users[i].name%></td>
+                            <td><%=users[i].email%></td>
+                            <td><%=users[i].gender%></td>
+                            <td><%=users[i].status%></td>
                             <td>
-                                <a href="/update_user" class="btn border-shadow update">
+                                <a href="/updateUser" class="btn border-shadow update">
                                     <span class="text-gradient"><i class="fas fa-pencil-alt"></i></span>
                                 </a>
-                                <a class="btn border-shadow delete">
+                                <a class="btn border-shadow delete" data-id=<%=users[i]._id%>>
                                     <span class="text-gradient"><i class="fas fa-times"></i></span>
                                 </a>
                             </td>
                         </tr>
+                        <%}%>
                     </tbody>
                 </table>
             </form>
